@@ -1,15 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const NavLink = ({ el }: { el: { to: string; title: string } }) => {
-  useEffect(() => {
-    console.log("1" < "2");
-  }, []);
+  const pathname = usePathname();
+  const isActive = pathname === el.to;
+
   return (
     <Link href={el.to}>
-      <li className="text-black list-none text-xl hover:text-blue-400">
+      <li
+        className={
+          "list-none text-xl hover:text-blue-400 " +
+          (isActive ? "text-blue-400" : "text-white")
+        }
+      >
         {el.title}
       </li>
     </Link>
