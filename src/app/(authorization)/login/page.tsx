@@ -14,6 +14,7 @@ export default function Login() {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCredentials((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
   return (
     <div>
       <h1>Welcome Back 👋</h1>
