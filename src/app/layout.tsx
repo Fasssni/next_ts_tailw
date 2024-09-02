@@ -2,6 +2,7 @@ import { Inter, Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const roboto = Roboto({
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("min-h-screen font- antialiased", roboto)}>
       <body>
-        <Nav></Nav>
-        {children}
+        <ThemeProvider defaultTheme="dark" attribute="class">
+          <Nav></Nav>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,34 +1,16 @@
 "use client";
+import LoginForm from "@/components/forms/LoginForm";
 import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
-type LoginType = {
-  email: string;
-  password: string;
-};
-export default function Login() {
-  const [credentials, setCredentials] = useState<LoginType>({
-    email: "",
-    password: "",
-  });
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCredentials((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+export default function Login() {
   return (
-    <div>
-      <h1>Welcome Back 👋</h1>
-      <h3>We are happy to have you back</h3>
-      <form>
-        {["email", "password"].map((el) => (
-          <Input
-            key={el}
-            onChange={handleOnChange}
-            name={el}
-            type={el}
-            hasHide={el === "password"}
-          />
-        ))}
-      </form>
+    <div className="flex h-screen max-h-screen">
+      <section className="remove-scrollbar container my-auto">
+        <div className="sub-container max-w-[396px]">
+          <LoginForm />
+        </div>
+      </section>
     </div>
   );
 }
