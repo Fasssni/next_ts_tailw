@@ -11,8 +11,6 @@ export default function Nav() {
 }
 
 const navLinks = [
-  { to: "/admin", title: "Admin" },
-  { to: "/", title: "other" },
   { to: "/login", title: "login" },
   { to: "/signup", title: "signup" },
 ];
